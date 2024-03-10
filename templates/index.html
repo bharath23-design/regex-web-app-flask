@@ -98,7 +98,7 @@
     <div class="container">
         <h1>Regex Pattern Matching Web Application</h1>
 
-        <div class="form-container">
+        <div class="form-container mb-3">
             <form action='/' method='POST'>
                 <div class="form-group">
                     <label for="pattern">Enter a pattern</label>
@@ -113,7 +113,7 @@
         </div>
 
         {% if pattern and data %}
-            <div class="result-container">
+            <div class="result-container mb-3">
                 <p class="result-text"><strong>Pattern:</strong> {{ pattern }}</p>
                 <p class="result-text"><strong>Data:</strong> {{ data }}</p>
 
@@ -132,7 +132,25 @@
             </div>
         {% endif %}
     </div>
+    <div class='container'>
+        <div class="form-container mb-3">
 
+        <form action='/' method='POST'>
+            <div class="form-group">
+                <label for="email">Enter an email</label>
+                <input type='text' id='email' name='email' class='form-control' placeholder='Enter an email' />
+            </div>
+            <button type='submit' class='btn btn-success'>Validate Email</button>
+        </form>
+    </div>
+</div>
+        {% if is_valid_email is not none and email %}
+         <div class="result-container">
+          <p class="result-text">Email is {{ 'valid' if is_valid_email else 'not valid' }}</p>
+         </div>
+       {% endif %}
+
+    
     <!-- Bootstrap JS and Popper.js (required for Bootstrap components) -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
